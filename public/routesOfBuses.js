@@ -8,10 +8,11 @@ var showBus = function(buses){
 var showList = function(listOfBuses){
 	$('.source').empty();
 	$('.destination').empty();
+	$('.place').empty();
 	listOfBuses.forEach(function(bus){
 		$('.source').append('<option>'+bus+'</option>');
 		$('.destination').append('<option>'+bus+'</option>');
-
+		$('.place').append('<option>'+bus+'</option>');
 	})
 };
 
@@ -33,6 +34,13 @@ var search = function(){
 var searchRoute = function(){
 	var bus = $('.bus_no').val();
 	$.post("search_routes",{b:bus},function(data){
+		showBus(JSON.parse(data));
+	})
+}
+
+var searchBuses = function(){
+	var place = $('.place').val();
+	$.post("search_buses_of_place",{busFor:place},function(data){
 		showBus(JSON.parse(data));
 	})
 }
