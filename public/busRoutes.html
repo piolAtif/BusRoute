@@ -2,14 +2,15 @@
 <head>
 	<title>BANGLORE BUS ROUTES</title>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<script type="text/javascript" src = "busRoute.js"></script>
+	<script type="text/javascript" src = "routesOfBuses.js"></script>
 </head>
 <body>
-	from:<input type = "text" name = "from">
-	to:<input type = "text" name = "to">
+	from:<select class = "source"></select>
+	to: <select class = "destination"></select>
 	<button onclick = "search()">find</button>
 
-	busno:<input type = "text" name ="bus_no">
+
+	busno:<select class = "bus_no"></select>
 	<button onclick = "searchRoute()">find Route</button>
 	<div class="buses"></div>
 </body>
